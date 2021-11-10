@@ -102,6 +102,38 @@ class PetriNetwork:
         for p,m in zip(self.P,marking):
             p.token = m
 
+    @property
+    def reachable_marking(self):
+        init_mark = tuple([p.token for p in self.P])
+        marking_set = set()
+        marking_set.add(init_mark)
+        queue = [init_mark]
+
+        while len(queue) != 0:
+            cur_mark = queue[0]
+            queue.pop(0)
+            self.set_marking(cur_mark)
+            for t in self.T:
+                if t.is_enable():
+                    t.fire()
+                    m = tuple([p.token for p in self.P])
+                    if m not in marking_set:
+                        marking_set.add(m)
+                        queue.append(m)
+                    self.set_marking(cur_mark)
+
+        self.set_marking(init_mark)
+        return list(marking_set)
+
+    def show_reachable_marking(self):
+        reach_mar = self.reachable_marking
+        for m in reach_mar:
+            s = '['
+            for token,p in zip(m,self.P):
+                s += '{}.{}, '.format(token,p.label)
+            s = s[:-2]+']'
+            print(s)
+
     def __str__(self):
         ps = [p.label for p in self.P]
         ts = [t.label for t in self.T]
