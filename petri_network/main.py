@@ -1,26 +1,22 @@
 class Place:
     def __init__(self, token:int = 0, label:str = 'p'):
-        self.__token = max(token,0)
+        self.token = max(token,0)
         self.label = label
 
-    @property
-    def holding(self)->int:
-        return self.__token
-
     def non_blocking(self)->bool:
-        return self.__token >= 1
+        return self.token >= 1
 
     def trigger(self, state:bool)->bool:
         '''
         state = true: place send token to transion
         state = false: place get token from transition
         '''
-        if self.__token <= 0 and state: return
-        self.__token -= 1 if state else -1
+        if self.token <= 0 and state: return
+        self.token -= 1 if state else -1
 
     def __str__(self):
-        log = 'Place \'{}\': {} token'.format(self.label,self.__token)
-        if self.__token >= 2:
+        log = 'Place \'{}\': {} token'.format(self.label,self.token)
+        if self.token >= 2:
             log += 's'
         return log
     
@@ -85,19 +81,26 @@ class PetriNetwork:
             t = Transition.create_with_set(preset, postset, key)
             self.T.append(t)
 
-    def add_P_label(self, labels):
+    def add_P_label(self, labels:list):
         if len(labels) != len(self.P):
             print('Labels length not match')
             return
         for p,l in zip(self.P,labels):
             p.label = l
 
-    def add_T_label(self, labels):
+    def add_T_label(self, labels:list):
         if len(labels) != len(self.T):
             print('Labels length not match')
             return
         for t,l in zip(self.T,labels):
             t.label = l
+
+    def set_marking(self, marking:list):
+        if len(marking) != len(self.P):
+            print('Marking not match!')
+            return
+        for p,m in zip(self.P,marking):
+            p.token = m
 
     def __str__(self):
         ps = [p.label for p in self.P]
@@ -109,14 +112,16 @@ class PetriNetwork:
     def marking(self):
         marking = '['
         for p in self.P:
-            marking += '{}.{}, '.format(p.holding,p.label)
+            marking += '{}.{}, '.format(p.token,p.label)
         marking = marking[:-2]+']'
         return marking
 
-    def fire(self, t_index):
+    def fire(self, t_index:int):
         if t_index >= len(self.T):
             print('Out of range transition')
             return
+        if t_index < 0:
+            print('Index must be non-negative')
         t = self.T[t_index]
         t_label = t.label if t.label != 't' else 't{}'.format(t_index)
         if self.T[t_index].fire():
