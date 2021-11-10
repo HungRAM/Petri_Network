@@ -1,12 +1,13 @@
 from petri_network import PetriNetwork
 
-marking = [0,0,0]
+marking = [10,10,10,10,10,10]
 transitions = {
-    't1': [[0],[1]],
-    't2': [[1],[2]]
+    't1': [[0,1],[2,3]],
+    't2': [[2,3],[4,5]],
+    't3': [[5],[1]]
 }
-t_labels = ['start','change']
-p_labels = ['wait','inside','done']
+t_labels = ['start','change','end']
+p_labels = ['wait','free','inside','busy','done','docu']
 
 net = PetriNetwork(transitions, marking)
 net.add_P_label(p_labels)
