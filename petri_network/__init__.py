@@ -1,1 +1,1 @@
-from .main import *
+from .petri_network import *

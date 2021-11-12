@@ -1,3 +1,5 @@
+from string import Template
+
 class Place:
     def __init__(self, token:int = 0, label:str = 'p'):
         self.token = max(token,0)
@@ -6,7 +8,7 @@ class Place:
     def non_blocking(self)->bool:
         return self.token >= 1
 
-    def trigger(self, state:bool)->bool:
+    def trigger(self, state:bool):
         '''
         state = true: place send token to transion
         state = false: place get token from transition
@@ -133,6 +135,27 @@ class PetriNetwork:
                 s += '{}.{}, '.format(token,p.label)
             s = s[:-2]+']'
             print(s)
+
+    def all_firing_sequence(self, filename:str):
+        f = open(filename,'w')
+        templ_str = Template('Firing sequence: $fs\nMarking: $m\n')
+        f.write('All firing sequence and marking:\n')
+
+        init_mark = [p.token for p in self.P]
+        queue = [[[],init_mark]]
+
+        while len(queue) != 0:
+            cur_seq,cur_mark = queue[0]
+            queue.pop(0)
+            f.write(templ_str.substitute(fs=cur_seq,m=cur_mark))
+            self.set_marking(cur_mark)
+            for t in self.T:
+                if t.is_enable():
+                    t.fire()
+                    m = [p.token for p in self.P]
+                    queue.append([cur_seq+[t.label], m])
+                    self.set_marking(cur_mark)
+        f.close()
 
     def __str__(self):
         ps = [p.label for p in self.P]
