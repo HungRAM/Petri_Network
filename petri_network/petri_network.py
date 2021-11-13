@@ -129,6 +129,7 @@ class PetriNetwork:
 
     def show_reachable_marking(self):
         reach_mar = self.reachable_marking
+        print('There are {} reachable marking'.format(len(reach_mar)))
         for m in reach_mar:
             s = '['
             for token,p in zip(m,self.P):
@@ -136,26 +137,54 @@ class PetriNetwork:
             s = s[:-2]+']'
             print(s)
 
-    def all_firing_sequence(self, filename:str):
+    def all_firing_sequence(self, filename:str = 'firing_sequence.txt', limit:int = 1000):
         f = open(filename,'w')
-        templ_str = Template('Firing sequence: $fs\nMarking: $m\n')
-        f.write('All firing sequence and marking:\n')
+        templ_str = Template('Firing sequence: $fs\nMarking: $m\n\n')
+        f.write('All firing sequence and marking:\n\n')
 
         init_mark = [p.token for p in self.P]
         queue = [[[],init_mark]]
+        count = 0
 
         while len(queue) != 0:
             cur_seq,cur_mark = queue[0]
             queue.pop(0)
             f.write(templ_str.substitute(fs=cur_seq,m=cur_mark))
             self.set_marking(cur_mark)
+            count+=1
+            if count >= limit:
+                f.write("To be continued...")
+                break
             for t in self.T:
                 if t.is_enable():
                     t.fire()
                     m = [p.token for p in self.P]
                     queue.append([cur_seq+[t.label], m])
                     self.set_marking(cur_mark)
+        self.set_marking(init_mark)
+        print('Open \'{}\' to see the result!'.format(filename))
         f.close()
+
+    def auto_firing(self, limit:int = 100):
+        count = 0
+        templ_str = Template('\'$t\' fired!\nMarking: $m\n')
+        is_deadblock = False
+        print('Start {}\n'.format(self.marking))
+
+        while count < limit and not is_deadblock:
+            count+=1
+            is_deadblock = True
+            for t in self.T:
+                if t.is_enable():
+                    t.fire()
+                    is_deadblock = False
+                    print(templ_str.substitute(t=t.label,m=self.marking))
+                    break
+        if is_deadblock:
+            print('Deadblock!')
+        else:
+            print('To be continued...')
+            
 
     def __str__(self):
         ps = [p.label for p in self.P]

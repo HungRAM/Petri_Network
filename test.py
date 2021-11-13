@@ -1,6 +1,6 @@
 from petri_network import PetriNetwork
 
-marking = [4,2,0,0,0,0]
+marking = [2,2,0,0,0,0]
 transitions = {
     't1': [[0,1],[2,3]],
     't2': [[2,3],[4,5]],
@@ -16,4 +16,6 @@ net.add_T_label(t_labels)
 # print(net)
 # # print(net.P[0])
 # # print(net.T[0])
+# net.show_reachable_marking()
 net.all_firing_sequence('firing_sequence.txt')
+net.auto_firing()
