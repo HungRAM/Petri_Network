@@ -99,10 +99,10 @@ class PetriNetwork:
 
     def set_marking(self, marking:list):
         if len(marking) != len(self.P):
-            print('Marking not match!')
-            return
+            return False
         for p,m in zip(self.P,marking):
             p.token = m
+        return True
 
     @property
     def reachable_marking(self):
@@ -213,6 +213,63 @@ class PetriNetwork:
         else:
             print('\'{}\' is not enabled'.format(t_label))
 
+    def run(self):
+        menu = '''\
+MAIN MENU
+[1] Set marking
+[2] Fire by tripition
+[3] Auto fire
+[4] Show reachable marking
+[5] Show all firing sequence and marking
+[6] Exit/Quit'''
+
+        running = True
+        while running:
+            print(menu)
+            ip = input('Enter your choice [1,6]: ').strip()
+            while not ip.isdigit() or not (0<=int(ip)<=6):
+                ip = input('Wrong menu selection, please try again... ')
+
+            if ip=='1':
+                is_valid = False
+                new_mark = []
+                marking_templ = ""
+                for p in self.P:
+                    marking_templ += '.{} '.format(p.label)
+                print("Enter new marking [ {}]:".format(marking_templ))
+                new_mark = input('>> ').strip().split()
+                while True:
+                    is_valid = True
+                    # check valid marking
+                    for i in range(len(new_mark)):
+                        if new_mark[i].isdigit():
+                            new_mark[i] = int(new_mark[i])
+                        else:
+                            is_valid = False
+                            break
+                    if len(new_mark) != len(self.P):
+                        is_valid = False
+
+                    if is_valid: break
+                    print("Marking not match, please try again...")
+                    new_mark = input('>> ').strip().split()
+
+                self.set_marking(new_mark)
+                print('Current marking: {}'.format(self.marking))
+
+            elif ip=='2':
+                print('Fire by transition')
+            elif ip=='3':
+                print('Auto fire')
+            elif ip=='4':
+                print('Show reachable marking')
+            elif ip=='5':
+                print('Show all firing sequence and marking')
+            else:
+                print('End!')
+                running = False
+            print()
+            
 
 if __name__ == '__main__':
     # sample input
