@@ -1,4 +1,8 @@
 from string import Template
+import time
+import keyboard
+import sys
+import msvcrt
 
 class Place:
     def __init__(self, token:int = 0, label:str = 'p'):
@@ -109,10 +113,11 @@ class PetriNetwork:
         init_mark = tuple([p.token for p in self.P])
         marking_set = set()
         marking_set.add(init_mark)
-        queue = [init_mark]
+        queue = [[[],init_mark]]
+        reach_mar = [[[],self.marking]]
 
         while len(queue) != 0:
-            cur_mark = queue[0]
+            cur_seq,cur_mark = queue[0]
             queue.pop(0)
             self.set_marking(cur_mark)
             for t in self.T:
@@ -121,71 +126,49 @@ class PetriNetwork:
                     m = tuple([p.token for p in self.P])
                     if m not in marking_set:
                         marking_set.add(m)
-                        queue.append(m)
+                        queue.append([cur_seq+[t.label], m])
+                        reach_mar.append([cur_seq+[t.label],self.marking])
                     self.set_marking(cur_mark)
 
         self.set_marking(init_mark)
-        return list(marking_set)
+        return reach_mar
 
     def show_reachable_marking(self):
         reach_mar = self.reachable_marking
+        templ_str = Template('Firing sequence: $fs\nMarking: $m\n')
+        for seq,mark in reach_mar:
+            print(templ_str.substitute(fs=seq,m=mark))
         print('There are {} reachable marking'.format(len(reach_mar)))
-        for m in reach_mar:
-            s = '['
-            for token,p in zip(m,self.P):
-                s += '{}.{}, '.format(token,p.label)
-            s = s[:-2]+']'
-            print(s)
 
-    def all_firing_sequence(self, filename:str = 'firing_sequence.txt', limit:int = 1000):
-        f = open(filename,'w')
-        templ_str = Template('Firing sequence: $fs\nMarking: $m\n\n')
-        f.write('All firing sequence and marking:\n\n')
+    def auto_firing(self):
+            templ_str = Template('\'$t\' fired!\nMarking: $m\n')
+            is_deadblock = False
+            print('Start {}\n'.format(self.marking))
 
-        init_mark = [p.token for p in self.P]
-        queue = [[[],init_mark]]
-        count = 0
-
-        while len(queue) != 0:
-            cur_seq,cur_mark = queue[0]
-            queue.pop(0)
-            f.write(templ_str.substitute(fs=cur_seq,m=cur_mark))
-            self.set_marking(cur_mark)
-            count+=1
-            if count >= limit:
-                f.write("To be continued...")
-                break
-            for t in self.T:
-                if t.is_enable():
-                    t.fire()
-                    m = [p.token for p in self.P]
-                    queue.append([cur_seq+[t.label], m])
-                    self.set_marking(cur_mark)
-        self.set_marking(init_mark)
-        print('Open \'{}\' to see the result!'.format(filename))
-        f.close()
-
-    def auto_firing(self, limit:int = 100):
-        count = 0
-        templ_str = Template('\'$t\' fired!\nMarking: $m\n')
-        is_deadblock = False
-        print('Start {}\n'.format(self.marking))
-
-        while count < limit and not is_deadblock:
-            count+=1
-            is_deadblock = True
-            for t in self.T:
-                if t.is_enable():
-                    t.fire()
-                    is_deadblock = False
-                    print(templ_str.substitute(t=t.label,m=self.marking))
-                    break
-        if is_deadblock:
-            print('Deadblock!')
-        else:
-            print('To be continued...')
+            while not is_deadblock:
+                is_deadblock = True
+                for t in self.T:
+                    if t.is_enable():
+                        t.fire()
+                        is_deadblock = False
+                        for i in range(20):
+                            if keyboard.is_pressed('p'):
+                                print('Continue (Y/N)?')
+                                while True:
+                                    if keyboard.is_pressed('y'):
+                                        break
+                                    if keyboard.is_pressed('n'):
+                                        return
+                                break
+                            else:
+                                time.sleep(0.05)
+                        print(templ_str.substitute(t=t.label, m=self.marking))
+                        break
+            if is_deadblock:
+                print('Deadblock!')
+            else:
+                print('To be continued...')
             
-
     def __str__(self):
         ps = [p.label for p in self.P]
         ts = [t.label for t in self.T]
@@ -217,17 +200,16 @@ class PetriNetwork:
         menu = '''\
 MAIN MENU
 [1] Set marking
-[2] Fire by tripition
+[2] Fire by transition
 [3] Auto fire
 [4] Show reachable marking
-[5] Show all firing sequence and marking
-[6] Exit/Quit'''
+[5] Exit/Quit'''
 
         running = True
         while running:
             print(menu)
-            ip = input('Enter your choice [1,6]: ').strip()
-            while not ip.isdigit() or not (0<=int(ip)<=6):
+            ip = input('Enter your choice [1,5]: ').strip()
+            while not ip.isdigit() or not (0<=int(ip)<=5):
                 ip = input('Wrong menu selection, please try again... ')
 
             if ip=='1':
@@ -259,12 +241,23 @@ MAIN MENU
 
             elif ip=='2':
                 print('Fire by transition')
-            elif ip=='3':
-                print('Auto fire')
+
+            elif ip == '3':
+                print('Auto fire will start after 3s')
+                print('Press P to pause')
+                time.sleep(0.5)
+                for i in range(3):
+                    print(str(3-i), end=' ')
+                    time.sleep(1)
+                print('Lets\'go')
+                self.auto_firing()
+                sys.stdout.flush()
+                while msvcrt.kbhit():
+                    msvcrt.getch()
+
             elif ip=='4':
-                print('Show reachable marking')
-            elif ip=='5':
-                print('Show all firing sequence and marking')
+                self.show_reachable_marking()
+            
             else:
                 print('End!')
                 running = False
