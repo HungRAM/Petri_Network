@@ -1,0 +1,6 @@
+Firing sequence: []
+Marking: [0.wait, 1.free, 0.inside, 0.busy, 2.done, 1.docu]
+
+Firing sequence: ['end']
+Marking: [0.wait, 2.free, 0.inside, 0.busy, 2.done, 0.docu]
+

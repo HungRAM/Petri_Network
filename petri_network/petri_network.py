@@ -108,18 +108,21 @@ class PetriNetwork:
             p.token = m
         return True
 
-    @property
-    def reachable_marking(self):
+    def reachable_marking(self, filename:str = 'reachable_marking.txt'):
+        f = open(filename,'w')
+        templ_str = Template('Firing sequence: $fs\nMarking: $m\n\n')
         init_mark = tuple([p.token for p in self.P])
         marking_set = set()
         marking_set.add(init_mark)
         queue = [[[],init_mark]]
-        reach_mar = [[[],self.marking]]
+        count = 0
 
         while len(queue) != 0:
             cur_seq,cur_mark = queue[0]
             queue.pop(0)
             self.set_marking(cur_mark)
+            f.write(templ_str.substitute(fs=cur_seq,m=self.marking))
+            count+=1
             for t in self.T:
                 if t.is_enable():
                     t.fire()
@@ -127,18 +130,11 @@ class PetriNetwork:
                     if m not in marking_set:
                         marking_set.add(m)
                         queue.append([cur_seq+[t.label], m])
-                        reach_mar.append([cur_seq+[t.label],self.marking])
                     self.set_marking(cur_mark)
 
+        print('There are {} reachable marking'.format(count))
+        print('Open file \'{}\' to view all'.format(filename))
         self.set_marking(init_mark)
-        return reach_mar
-
-    def show_reachable_marking(self):
-        reach_mar = self.reachable_marking
-        templ_str = Template('Firing sequence: $fs\nMarking: $m\n')
-        for seq,mark in reach_mar:
-            print(templ_str.substitute(fs=seq,m=mark))
-        print('There are {} reachable marking'.format(len(reach_mar)))
 
     def auto_firing(self):
             templ_str = Template('\'$t\' fired!\nMarking: $m\n')
@@ -151,6 +147,7 @@ class PetriNetwork:
                     if t.is_enable():
                         t.fire()
                         is_deadblock = False
+                        print(templ_str.substitute(t=t.label, m=self.marking))
                         for i in range(20):
                             if keyboard.is_pressed('p'):
                                 print('Continue (Y/N)?')
@@ -162,7 +159,6 @@ class PetriNetwork:
                                 break
                             else:
                                 time.sleep(0.05)
-                        print(templ_str.substitute(t=t.label, m=self.marking))
                         break
             if is_deadblock:
                 print('Deadblock!')
@@ -192,7 +188,8 @@ class PetriNetwork:
         t = self.T[t_index]
         t_label = t.label if t.label != 't' else 't{}'.format(t_index)
         if self.T[t_index].fire():
-            print('\'{}\' fired'.format(t_label))
+            print('\'{}\' fired!'.format(t_label))
+            print('Current marking: {}'.format(self.marking))
         else:
             print('\'{}\' is not enabled'.format(t_label))
 
@@ -208,8 +205,9 @@ MAIN MENU
         running = True
         while running:
             print(menu)
+            print('Current marking: {}'.format(self.marking))
             ip = input('Enter your choice [1,5]: ').strip()
-            while not ip.isdigit() or not (0<=int(ip)<=5):
+            while not ip.isdecimal() or not (0<=int(ip)<=5):
                 ip = input('Wrong menu selection, please try again... ')
 
             if ip=='1':
@@ -224,7 +222,7 @@ MAIN MENU
                     is_valid = True
                     # check valid marking
                     for i in range(len(new_mark)):
-                        if new_mark[i].isdigit():
+                        if new_mark[i].isdecimal():
                             new_mark[i] = int(new_mark[i])
                         else:
                             is_valid = False
@@ -240,7 +238,23 @@ MAIN MENU
                 print('Current marking: {}'.format(self.marking))
 
             elif ip=='2':
-                print('Fire by transition')
+                t_label = ' '
+                for t in self.T:
+                    t_label += t.label + ' '
+                print('\nEnter X to exit')
+                print('Transition list: [{}]'.format(t_label))
+                while True:
+                    t_idx = input('\nEnter transition\'s index [0,{}]: '.format(len(self.T)-1)).strip()
+                    if t_idx.lower() == 'x':
+                        break
+                    if not t_idx.isdecimal():
+                        print('Index must be a number!')
+                        continue
+                    t_idx = int(t_idx)
+                    if not (0 <= t_idx < len(self.T)):
+                        print('Index is out of range [0,{}]'.format(len(self.T)-1))
+                        continue
+                    self.fire(t_idx)
 
             elif ip == '3':
                 print('Auto fire will start after 3s')
@@ -256,10 +270,10 @@ MAIN MENU
                     msvcrt.getch()
 
             elif ip=='4':
-                self.show_reachable_marking()
+                self.reachable_marking()
             
             else:
-                print('End!')
+                print('Goodbye<3')
                 running = False
             print()
             
