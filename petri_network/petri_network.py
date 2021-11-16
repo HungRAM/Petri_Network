@@ -185,6 +185,7 @@ class PetriNetwork:
             return
         if t_index < 0:
             print('Index must be non-negative')
+            return
         t = self.T[t_index]
         t_label = t.label if t.label != 't' else 't{}'.format(t_index)
         if self.T[t_index].fire():
