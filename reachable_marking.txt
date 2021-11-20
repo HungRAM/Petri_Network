@@ -1,6 +1,39 @@
 Firing sequence: []
-Marking: [0.wait, 1.free, 0.inside, 0.busy, 2.done, 1.docu]
+Marking: [4.wait, 1.free, 0.inside, 0.busy, 1.done, 0.docu]
 
-Firing sequence: ['end']
-Marking: [0.wait, 2.free, 0.inside, 0.busy, 2.done, 0.docu]
+Firing sequence: ['start']
+Marking: [3.wait, 0.free, 1.inside, 1.busy, 1.done, 0.docu]
+
+Firing sequence: ['start', 'change']
+Marking: [3.wait, 0.free, 0.inside, 0.busy, 2.done, 1.docu]
+
+Firing sequence: ['start', 'change', 'end']
+Marking: [3.wait, 1.free, 0.inside, 0.busy, 2.done, 0.docu]
+
+Firing sequence: ['start', 'change', 'end', 'start']
+Marking: [2.wait, 0.free, 1.inside, 1.busy, 2.done, 0.docu]
+
+Firing sequence: ['start', 'change', 'end', 'start', 'change']
+Marking: [2.wait, 0.free, 0.inside, 0.busy, 3.done, 1.docu]
+
+Firing sequence: ['start', 'change', 'end', 'start', 'change', 'end']
+Marking: [2.wait, 1.free, 0.inside, 0.busy, 3.done, 0.docu]
+
+Firing sequence: ['start', 'change', 'end', 'start', 'change', 'end', 'start']
+Marking: [1.wait, 0.free, 1.inside, 1.busy, 3.done, 0.docu]
+
+Firing sequence: ['start', 'change', 'end', 'start', 'change', 'end', 'start', 'change']
+Marking: [1.wait, 0.free, 0.inside, 0.busy, 4.done, 1.docu]
+
+Firing sequence: ['start', 'change', 'end', 'start', 'change', 'end', 'start', 'change', 'end']
+Marking: [1.wait, 1.free, 0.inside, 0.busy, 4.done, 0.docu]
+
+Firing sequence: ['start', 'change', 'end', 'start', 'change', 'end', 'start', 'change', 'end', 'start']
+Marking: [0.wait, 0.free, 1.inside, 1.busy, 4.done, 0.docu]
+
+Firing sequence: ['start', 'change', 'end', 'start', 'change', 'end', 'start', 'change', 'end', 'start', 'change']
+Marking: [0.wait, 0.free, 0.inside, 0.busy, 5.done, 1.docu]
+
+Firing sequence: ['start', 'change', 'end', 'start', 'change', 'end', 'start', 'change', 'end', 'start', 'change', 'end']
+Marking: [0.wait, 1.free, 0.inside, 0.busy, 5.done, 0.docu]
 
