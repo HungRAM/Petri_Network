@@ -89,7 +89,7 @@ MAIN MENU
                     msvcrt.getch()
             
             elif ip == '4':
-                print('Convert to transition system')
+                net.convert_to_TS()
 
             else:
                 print('Goodbye<3')
@@ -111,7 +111,7 @@ if __name__ == '__main__':
     net.add_T_label(t_labels)
 
     # 1b i
-    run(net,max_token=1)
+    # run(net,max_token=1)
 
     # 1b ii
     run(net)

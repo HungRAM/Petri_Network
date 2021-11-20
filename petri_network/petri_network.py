@@ -193,7 +193,46 @@ class PetriNetwork:
             print('Current marking: {}'.format(self.marking))
         else:
             print('\'{}\' is not enabled'.format(t_label))
-            
+    
+    def convert_to_TS(self, filename: str = 'transition_system.txt'):
+        f = open(filename, 'w')
+        templ_str = Template('S = {\n\t$fs\n}\nA = { $m }\nTR = {\n\t$n\n}\n')
+        my_dict = {}
+        rout = []
+        S = []
+        A = ' , '.join([t.label for t in self.T])
+        init_mark = tuple([p.token for p in self.P])
+        queue = [init_mark]
+        marking_set = set()
+        marking_set.add(init_mark)
+        count = 1
+        while len(queue) != 0:
+            cur_mark = queue[0]
+            queue.pop(0)
+            self.set_marking(cur_mark)
+            if self.marking not in my_dict:
+                my_dict[self.marking] = count
+                count += 1
+            for t in self.T:
+                if t.is_enable():
+                    sign = ['S{}'.format(my_dict[self.marking]), t.label]
+                    t.fire()
+                    if self.marking not in my_dict:
+                        my_dict[self.marking] = count
+                        count += 1
+                    sign.append('S{}'.format(my_dict[self.marking]))
+                    m = tuple([p.token for p in self.P])
+                    if m not in marking_set:
+                        marking_set.add(m)
+                        queue.append(m)
+                    rout.append('[{}]'.format('->'.join(sign)))
+                    self.set_marking(cur_mark)
+        for key, Value in my_dict.items():
+            S_unit = 'S{} = {}'.format(Value, key)
+            S.append(S_unit)
+        print('Open file \'{}\' to see the result'.format(filename))
+        f.write('\tTRANSION SYSTEM\n')
+        f.write(templ_str.substitute(fs='\n\t'.join(S), m=A, n='\n\t'.join(rout)))
 
 if __name__ == '__main__':
     # sample input

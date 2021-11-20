@@ -1,0 +1,12 @@
+	TRANSION SYSTEM
+S = {
+	S1 = [1.free, 0.busy, 0.docu]
+	S2 = [0.free, 1.busy, 0.docu]
+	S3 = [0.free, 0.busy, 1.docu]
+}
+A = { start , change , end }
+TR = {
+	[S1->start->S2]
+	[S2->change->S3]
+	[S3->end->S1]
+}
