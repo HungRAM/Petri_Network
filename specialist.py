@@ -31,7 +31,7 @@ if __name__ == '__main__':
     net.add_T_label(t_labels)
 
     # 1b i
-    # run1(net,specialist_templ,max_token=1)
+    run1(net,specialist_templ,max_token=1)
 
     # 1b ii
-    run1(net,specialist_templ)
+    # run1(net,specialist_templ)

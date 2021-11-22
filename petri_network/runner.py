@@ -11,7 +11,7 @@ def print_net(net,net_templ):
         d[p.label] = '0{}'.format(p.token) if p.token < 10 else p.token
     print(net_templ.substitute(d))
 
-def run1(net,net_templ,max_token = -1):
+def run1(net,net_templ=Template(''),max_token = -1):
         menu = '''\
 MAIN MENU
 [1] Set marking
@@ -47,14 +47,14 @@ MAIN MENU
 
                     # check valid marking
                     for i in range(len(new_mark)):
-                        if new_mark[i].isdecimal() and int(new_mark[i])>0:
+                        if new_mark[i].isdecimal() and int(new_mark[i])>=0:
                             new_mark[i] = int(new_mark[i])
                         else:
                             is_valid = 1
                             break
                     if len(new_mark) != len(net.P):
                         is_valid = 1
-                    if max_token != -1 and sum(new_mark) > max_token:
+                    elif max_token != -1 and sum(new_mark) > max_token:
                         is_valid = 2
 
                     if is_valid == 0: 
@@ -110,13 +110,13 @@ MAIN MENU
                 net.convert_to_TS()
                 input("Enter to continue!")
 
-            else:
+            elif ip == '5':
                 print('Goodbye<3')
                 break
             os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def run2(net,net_templ):
+def run2(net,net_templ=Template('')):
         menu = '''\
 MAIN MENU
 [1] Set marking
@@ -198,13 +198,13 @@ MAIN MENU
                     msvcrt.getch()
                 input('Enter to continue!!!')
             
-            else:
+            elif ip == '4':
                 print('Goodbye<3')
                 break
             os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def run3(net,net_templ):
+def run3(net,net_templ=Template('')):
         menu = '''\
 MAIN MENU
 [1] Set marking
@@ -291,7 +291,7 @@ MAIN MENU
                 net.reachable_marking()
                 input("Enter to continue!")
             
-            else:
+            elif ip == '5':
                 print('Goodbye<3')
                 break
             os.system('cls' if os.name == 'nt' else 'clear')
