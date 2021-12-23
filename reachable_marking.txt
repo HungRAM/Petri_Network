@@ -1,39 +1,768 @@
 Firing sequence: []
-Marking: [4.wait, 1.free, 0.inside, 0.busy, 1.done, 0.docu]
+Marking: [3.p0, 3.p1, 3.p2, 3.p3, 0.p4]
 
-Firing sequence: ['start']
-Marking: [3.wait, 0.free, 1.inside, 1.busy, 1.done, 0.docu]
+Firing sequence: ['t1']
+Marking: [2.p0, 3.p1, 3.p2, 3.p3, 1.p4]
 
-Firing sequence: ['start', 'change']
-Marking: [3.wait, 0.free, 0.inside, 0.busy, 2.done, 1.docu]
+Firing sequence: ['t2']
+Marking: [3.p0, 2.p1, 3.p2, 3.p3, 1.p4]
 
-Firing sequence: ['start', 'change', 'end']
-Marking: [3.wait, 1.free, 0.inside, 0.busy, 2.done, 0.docu]
+Firing sequence: ['t3']
+Marking: [3.p0, 3.p1, 2.p2, 3.p3, 1.p4]
 
-Firing sequence: ['start', 'change', 'end', 'start']
-Marking: [2.wait, 0.free, 1.inside, 1.busy, 2.done, 0.docu]
+Firing sequence: ['t4']
+Marking: [3.p0, 3.p1, 3.p2, 2.p3, 1.p4]
 
-Firing sequence: ['start', 'change', 'end', 'start', 'change']
-Marking: [2.wait, 0.free, 0.inside, 0.busy, 3.done, 1.docu]
+Firing sequence: ['t1', 't1']
+Marking: [1.p0, 3.p1, 3.p2, 3.p3, 2.p4]
 
-Firing sequence: ['start', 'change', 'end', 'start', 'change', 'end']
-Marking: [2.wait, 1.free, 0.inside, 0.busy, 3.done, 0.docu]
+Firing sequence: ['t1', 't2']
+Marking: [2.p0, 2.p1, 3.p2, 3.p3, 2.p4]
 
-Firing sequence: ['start', 'change', 'end', 'start', 'change', 'end', 'start']
-Marking: [1.wait, 0.free, 1.inside, 1.busy, 3.done, 0.docu]
+Firing sequence: ['t1', 't3']
+Marking: [2.p0, 3.p1, 2.p2, 3.p3, 2.p4]
 
-Firing sequence: ['start', 'change', 'end', 'start', 'change', 'end', 'start', 'change']
-Marking: [1.wait, 0.free, 0.inside, 0.busy, 4.done, 1.docu]
+Firing sequence: ['t1', 't4']
+Marking: [2.p0, 3.p1, 3.p2, 2.p3, 2.p4]
 
-Firing sequence: ['start', 'change', 'end', 'start', 'change', 'end', 'start', 'change', 'end']
-Marking: [1.wait, 1.free, 0.inside, 0.busy, 4.done, 0.docu]
+Firing sequence: ['t2', 't2']
+Marking: [3.p0, 1.p1, 3.p2, 3.p3, 2.p4]
 
-Firing sequence: ['start', 'change', 'end', 'start', 'change', 'end', 'start', 'change', 'end', 'start']
-Marking: [0.wait, 0.free, 1.inside, 1.busy, 4.done, 0.docu]
+Firing sequence: ['t2', 't3']
+Marking: [3.p0, 2.p1, 2.p2, 3.p3, 2.p4]
 
-Firing sequence: ['start', 'change', 'end', 'start', 'change', 'end', 'start', 'change', 'end', 'start', 'change']
-Marking: [0.wait, 0.free, 0.inside, 0.busy, 5.done, 1.docu]
+Firing sequence: ['t2', 't4']
+Marking: [3.p0, 2.p1, 3.p2, 2.p3, 2.p4]
 
-Firing sequence: ['start', 'change', 'end', 'start', 'change', 'end', 'start', 'change', 'end', 'start', 'change', 'end']
-Marking: [0.wait, 1.free, 0.inside, 0.busy, 5.done, 0.docu]
+Firing sequence: ['t3', 't3']
+Marking: [3.p0, 3.p1, 1.p2, 3.p3, 2.p4]
+
+Firing sequence: ['t3', 't4']
+Marking: [3.p0, 3.p1, 2.p2, 2.p3, 2.p4]
+
+Firing sequence: ['t4', 't4']
+Marking: [3.p0, 3.p1, 3.p2, 1.p3, 2.p4]
+
+Firing sequence: ['t1', 't1', 't1']
+Marking: [0.p0, 3.p1, 3.p2, 3.p3, 3.p4]
+
+Firing sequence: ['t1', 't1', 't2']
+Marking: [1.p0, 2.p1, 3.p2, 3.p3, 3.p4]
+
+Firing sequence: ['t1', 't1', 't3']
+Marking: [1.p0, 3.p1, 2.p2, 3.p3, 3.p4]
+
+Firing sequence: ['t1', 't1', 't4']
+Marking: [1.p0, 3.p1, 3.p2, 2.p3, 3.p4]
+
+Firing sequence: ['t1', 't2', 't2']
+Marking: [2.p0, 1.p1, 3.p2, 3.p3, 3.p4]
+
+Firing sequence: ['t1', 't2', 't3']
+Marking: [2.p0, 2.p1, 2.p2, 3.p3, 3.p4]
+
+Firing sequence: ['t1', 't2', 't4']
+Marking: [2.p0, 2.p1, 3.p2, 2.p3, 3.p4]
+
+Firing sequence: ['t1', 't3', 't3']
+Marking: [2.p0, 3.p1, 1.p2, 3.p3, 3.p4]
+
+Firing sequence: ['t1', 't3', 't4']
+Marking: [2.p0, 3.p1, 2.p2, 2.p3, 3.p4]
+
+Firing sequence: ['t1', 't4', 't4']
+Marking: [2.p0, 3.p1, 3.p2, 1.p3, 3.p4]
+
+Firing sequence: ['t2', 't2', 't2']
+Marking: [3.p0, 0.p1, 3.p2, 3.p3, 3.p4]
+
+Firing sequence: ['t2', 't2', 't3']
+Marking: [3.p0, 1.p1, 2.p2, 3.p3, 3.p4]
+
+Firing sequence: ['t2', 't2', 't4']
+Marking: [3.p0, 1.p1, 3.p2, 2.p3, 3.p4]
+
+Firing sequence: ['t2', 't3', 't3']
+Marking: [3.p0, 2.p1, 1.p2, 3.p3, 3.p4]
+
+Firing sequence: ['t2', 't3', 't4']
+Marking: [3.p0, 2.p1, 2.p2, 2.p3, 3.p4]
+
+Firing sequence: ['t2', 't4', 't4']
+Marking: [3.p0, 2.p1, 3.p2, 1.p3, 3.p4]
+
+Firing sequence: ['t3', 't3', 't3']
+Marking: [3.p0, 3.p1, 0.p2, 3.p3, 3.p4]
+
+Firing sequence: ['t3', 't3', 't4']
+Marking: [3.p0, 3.p1, 1.p2, 2.p3, 3.p4]
+
+Firing sequence: ['t3', 't4', 't4']
+Marking: [3.p0, 3.p1, 2.p2, 1.p3, 3.p4]
+
+Firing sequence: ['t4', 't4', 't4']
+Marking: [3.p0, 3.p1, 3.p2, 0.p3, 3.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2']
+Marking: [0.p0, 2.p1, 3.p2, 3.p3, 4.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't3']
+Marking: [0.p0, 3.p1, 2.p2, 3.p3, 4.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't4']
+Marking: [0.p0, 3.p1, 3.p2, 2.p3, 4.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2']
+Marking: [1.p0, 1.p1, 3.p2, 3.p3, 4.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't3']
+Marking: [1.p0, 2.p1, 2.p2, 3.p3, 4.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't4']
+Marking: [1.p0, 2.p1, 3.p2, 2.p3, 4.p4]
+
+Firing sequence: ['t1', 't1', 't3', 't3']
+Marking: [1.p0, 3.p1, 1.p2, 3.p3, 4.p4]
+
+Firing sequence: ['t1', 't1', 't3', 't4']
+Marking: [1.p0, 3.p1, 2.p2, 2.p3, 4.p4]
+
+Firing sequence: ['t1', 't1', 't4', 't4']
+Marking: [1.p0, 3.p1, 3.p2, 1.p3, 4.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2']
+Marking: [2.p0, 0.p1, 3.p2, 3.p3, 4.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't3']
+Marking: [2.p0, 1.p1, 2.p2, 3.p3, 4.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't4']
+Marking: [2.p0, 1.p1, 3.p2, 2.p3, 4.p4]
+
+Firing sequence: ['t1', 't2', 't3', 't3']
+Marking: [2.p0, 2.p1, 1.p2, 3.p3, 4.p4]
+
+Firing sequence: ['t1', 't2', 't3', 't4']
+Marking: [2.p0, 2.p1, 2.p2, 2.p3, 4.p4]
+
+Firing sequence: ['t1', 't2', 't4', 't4']
+Marking: [2.p0, 2.p1, 3.p2, 1.p3, 4.p4]
+
+Firing sequence: ['t1', 't3', 't3', 't3']
+Marking: [2.p0, 3.p1, 0.p2, 3.p3, 4.p4]
+
+Firing sequence: ['t1', 't3', 't3', 't4']
+Marking: [2.p0, 3.p1, 1.p2, 2.p3, 4.p4]
+
+Firing sequence: ['t1', 't3', 't4', 't4']
+Marking: [2.p0, 3.p1, 2.p2, 1.p3, 4.p4]
+
+Firing sequence: ['t1', 't4', 't4', 't4']
+Marking: [2.p0, 3.p1, 3.p2, 0.p3, 4.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't3']
+Marking: [3.p0, 0.p1, 2.p2, 3.p3, 4.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't4']
+Marking: [3.p0, 0.p1, 3.p2, 2.p3, 4.p4]
+
+Firing sequence: ['t2', 't2', 't3', 't3']
+Marking: [3.p0, 1.p1, 1.p2, 3.p3, 4.p4]
+
+Firing sequence: ['t2', 't2', 't3', 't4']
+Marking: [3.p0, 1.p1, 2.p2, 2.p3, 4.p4]
+
+Firing sequence: ['t2', 't2', 't4', 't4']
+Marking: [3.p0, 1.p1, 3.p2, 1.p3, 4.p4]
+
+Firing sequence: ['t2', 't3', 't3', 't3']
+Marking: [3.p0, 2.p1, 0.p2, 3.p3, 4.p4]
+
+Firing sequence: ['t2', 't3', 't3', 't4']
+Marking: [3.p0, 2.p1, 1.p2, 2.p3, 4.p4]
+
+Firing sequence: ['t2', 't3', 't4', 't4']
+Marking: [3.p0, 2.p1, 2.p2, 1.p3, 4.p4]
+
+Firing sequence: ['t2', 't4', 't4', 't4']
+Marking: [3.p0, 2.p1, 3.p2, 0.p3, 4.p4]
+
+Firing sequence: ['t3', 't3', 't3', 't4']
+Marking: [3.p0, 3.p1, 0.p2, 2.p3, 4.p4]
+
+Firing sequence: ['t3', 't3', 't4', 't4']
+Marking: [3.p0, 3.p1, 1.p2, 1.p3, 4.p4]
+
+Firing sequence: ['t3', 't4', 't4', 't4']
+Marking: [3.p0, 3.p1, 2.p2, 0.p3, 4.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2']
+Marking: [0.p0, 1.p1, 3.p2, 3.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't3']
+Marking: [0.p0, 2.p1, 2.p2, 3.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't4']
+Marking: [0.p0, 2.p1, 3.p2, 2.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't3', 't3']
+Marking: [0.p0, 3.p1, 1.p2, 3.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't3', 't4']
+Marking: [0.p0, 3.p1, 2.p2, 2.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't4', 't4']
+Marking: [0.p0, 3.p1, 3.p2, 1.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2']
+Marking: [1.p0, 0.p1, 3.p2, 3.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't3']
+Marking: [1.p0, 1.p1, 2.p2, 3.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't4']
+Marking: [1.p0, 1.p1, 3.p2, 2.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't3', 't3']
+Marking: [1.p0, 2.p1, 1.p2, 3.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't3', 't4']
+Marking: [1.p0, 2.p1, 2.p2, 2.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't4', 't4']
+Marking: [1.p0, 2.p1, 3.p2, 1.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't3', 't3', 't3']
+Marking: [1.p0, 3.p1, 0.p2, 3.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't3', 't3', 't4']
+Marking: [1.p0, 3.p1, 1.p2, 2.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't3', 't4', 't4']
+Marking: [1.p0, 3.p1, 2.p2, 1.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't4', 't4', 't4']
+Marking: [1.p0, 3.p1, 3.p2, 0.p3, 5.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't3']
+Marking: [2.p0, 0.p1, 2.p2, 3.p3, 5.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't4']
+Marking: [2.p0, 0.p1, 3.p2, 2.p3, 5.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't3', 't3']
+Marking: [2.p0, 1.p1, 1.p2, 3.p3, 5.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't3', 't4']
+Marking: [2.p0, 1.p1, 2.p2, 2.p3, 5.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't4', 't4']
+Marking: [2.p0, 1.p1, 3.p2, 1.p3, 5.p4]
+
+Firing sequence: ['t1', 't2', 't3', 't3', 't3']
+Marking: [2.p0, 2.p1, 0.p2, 3.p3, 5.p4]
+
+Firing sequence: ['t1', 't2', 't3', 't3', 't4']
+Marking: [2.p0, 2.p1, 1.p2, 2.p3, 5.p4]
+
+Firing sequence: ['t1', 't2', 't3', 't4', 't4']
+Marking: [2.p0, 2.p1, 2.p2, 1.p3, 5.p4]
+
+Firing sequence: ['t1', 't2', 't4', 't4', 't4']
+Marking: [2.p0, 2.p1, 3.p2, 0.p3, 5.p4]
+
+Firing sequence: ['t1', 't3', 't3', 't3', 't4']
+Marking: [2.p0, 3.p1, 0.p2, 2.p3, 5.p4]
+
+Firing sequence: ['t1', 't3', 't3', 't4', 't4']
+Marking: [2.p0, 3.p1, 1.p2, 1.p3, 5.p4]
+
+Firing sequence: ['t1', 't3', 't4', 't4', 't4']
+Marking: [2.p0, 3.p1, 2.p2, 0.p3, 5.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't3', 't3']
+Marking: [3.p0, 0.p1, 1.p2, 3.p3, 5.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't3', 't4']
+Marking: [3.p0, 0.p1, 2.p2, 2.p3, 5.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't4', 't4']
+Marking: [3.p0, 0.p1, 3.p2, 1.p3, 5.p4]
+
+Firing sequence: ['t2', 't2', 't3', 't3', 't3']
+Marking: [3.p0, 1.p1, 0.p2, 3.p3, 5.p4]
+
+Firing sequence: ['t2', 't2', 't3', 't3', 't4']
+Marking: [3.p0, 1.p1, 1.p2, 2.p3, 5.p4]
+
+Firing sequence: ['t2', 't2', 't3', 't4', 't4']
+Marking: [3.p0, 1.p1, 2.p2, 1.p3, 5.p4]
+
+Firing sequence: ['t2', 't2', 't4', 't4', 't4']
+Marking: [3.p0, 1.p1, 3.p2, 0.p3, 5.p4]
+
+Firing sequence: ['t2', 't3', 't3', 't3', 't4']
+Marking: [3.p0, 2.p1, 0.p2, 2.p3, 5.p4]
+
+Firing sequence: ['t2', 't3', 't3', 't4', 't4']
+Marking: [3.p0, 2.p1, 1.p2, 1.p3, 5.p4]
+
+Firing sequence: ['t2', 't3', 't4', 't4', 't4']
+Marking: [3.p0, 2.p1, 2.p2, 0.p3, 5.p4]
+
+Firing sequence: ['t3', 't3', 't3', 't4', 't4']
+Marking: [3.p0, 3.p1, 0.p2, 1.p3, 5.p4]
+
+Firing sequence: ['t3', 't3', 't4', 't4', 't4']
+Marking: [3.p0, 3.p1, 1.p2, 0.p3, 5.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2']
+Marking: [0.p0, 0.p1, 3.p2, 3.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't3']
+Marking: [0.p0, 1.p1, 2.p2, 3.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't4']
+Marking: [0.p0, 1.p1, 3.p2, 2.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't3', 't3']
+Marking: [0.p0, 2.p1, 1.p2, 3.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't3', 't4']
+Marking: [0.p0, 2.p1, 2.p2, 2.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't4', 't4']
+Marking: [0.p0, 2.p1, 3.p2, 1.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't3', 't3', 't3']
+Marking: [0.p0, 3.p1, 0.p2, 3.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't3', 't3', 't4']
+Marking: [0.p0, 3.p1, 1.p2, 2.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't3', 't4', 't4']
+Marking: [0.p0, 3.p1, 2.p2, 1.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't4', 't4', 't4']
+Marking: [0.p0, 3.p1, 3.p2, 0.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't3']
+Marking: [1.p0, 0.p1, 2.p2, 3.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't4']
+Marking: [1.p0, 0.p1, 3.p2, 2.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't3', 't3']
+Marking: [1.p0, 1.p1, 1.p2, 3.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't3', 't4']
+Marking: [1.p0, 1.p1, 2.p2, 2.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't4', 't4']
+Marking: [1.p0, 1.p1, 3.p2, 1.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't3', 't3', 't3']
+Marking: [1.p0, 2.p1, 0.p2, 3.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't3', 't3', 't4']
+Marking: [1.p0, 2.p1, 1.p2, 2.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't3', 't4', 't4']
+Marking: [1.p0, 2.p1, 2.p2, 1.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't4', 't4', 't4']
+Marking: [1.p0, 2.p1, 3.p2, 0.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't3', 't3', 't3', 't4']
+Marking: [1.p0, 3.p1, 0.p2, 2.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't3', 't3', 't4', 't4']
+Marking: [1.p0, 3.p1, 1.p2, 1.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't3', 't4', 't4', 't4']
+Marking: [1.p0, 3.p1, 2.p2, 0.p3, 6.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't3', 't3']
+Marking: [2.p0, 0.p1, 1.p2, 3.p3, 6.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't3', 't4']
+Marking: [2.p0, 0.p1, 2.p2, 2.p3, 6.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't4', 't4']
+Marking: [2.p0, 0.p1, 3.p2, 1.p3, 6.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't3', 't3', 't3']
+Marking: [2.p0, 1.p1, 0.p2, 3.p3, 6.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't3', 't3', 't4']
+Marking: [2.p0, 1.p1, 1.p2, 2.p3, 6.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't3', 't4', 't4']
+Marking: [2.p0, 1.p1, 2.p2, 1.p3, 6.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't4', 't4', 't4']
+Marking: [2.p0, 1.p1, 3.p2, 0.p3, 6.p4]
+
+Firing sequence: ['t1', 't2', 't3', 't3', 't3', 't4']
+Marking: [2.p0, 2.p1, 0.p2, 2.p3, 6.p4]
+
+Firing sequence: ['t1', 't2', 't3', 't3', 't4', 't4']
+Marking: [2.p0, 2.p1, 1.p2, 1.p3, 6.p4]
+
+Firing sequence: ['t1', 't2', 't3', 't4', 't4', 't4']
+Marking: [2.p0, 2.p1, 2.p2, 0.p3, 6.p4]
+
+Firing sequence: ['t1', 't3', 't3', 't3', 't4', 't4']
+Marking: [2.p0, 3.p1, 0.p2, 1.p3, 6.p4]
+
+Firing sequence: ['t1', 't3', 't3', 't4', 't4', 't4']
+Marking: [2.p0, 3.p1, 1.p2, 0.p3, 6.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't3', 't3', 't3']
+Marking: [3.p0, 0.p1, 0.p2, 3.p3, 6.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't3', 't3', 't4']
+Marking: [3.p0, 0.p1, 1.p2, 2.p3, 6.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't3', 't4', 't4']
+Marking: [3.p0, 0.p1, 2.p2, 1.p3, 6.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't4', 't4', 't4']
+Marking: [3.p0, 0.p1, 3.p2, 0.p3, 6.p4]
+
+Firing sequence: ['t2', 't2', 't3', 't3', 't3', 't4']
+Marking: [3.p0, 1.p1, 0.p2, 2.p3, 6.p4]
+
+Firing sequence: ['t2', 't2', 't3', 't3', 't4', 't4']
+Marking: [3.p0, 1.p1, 1.p2, 1.p3, 6.p4]
+
+Firing sequence: ['t2', 't2', 't3', 't4', 't4', 't4']
+Marking: [3.p0, 1.p1, 2.p2, 0.p3, 6.p4]
+
+Firing sequence: ['t2', 't3', 't3', 't3', 't4', 't4']
+Marking: [3.p0, 2.p1, 0.p2, 1.p3, 6.p4]
+
+Firing sequence: ['t2', 't3', 't3', 't4', 't4', 't4']
+Marking: [3.p0, 2.p1, 1.p2, 0.p3, 6.p4]
+
+Firing sequence: ['t3', 't3', 't3', 't4', 't4', 't4']
+Marking: [3.p0, 3.p1, 0.p2, 0.p3, 6.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't3']
+Marking: [0.p0, 0.p1, 2.p2, 3.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't4']
+Marking: [0.p0, 0.p1, 3.p2, 2.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't3', 't3']
+Marking: [0.p0, 1.p1, 1.p2, 3.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't3', 't4']
+Marking: [0.p0, 1.p1, 2.p2, 2.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't4', 't4']
+Marking: [0.p0, 1.p1, 3.p2, 1.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't3', 't3', 't3']
+Marking: [0.p0, 2.p1, 0.p2, 3.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't3', 't3', 't4']
+Marking: [0.p0, 2.p1, 1.p2, 2.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't3', 't4', 't4']
+Marking: [0.p0, 2.p1, 2.p2, 1.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't4', 't4', 't4']
+Marking: [0.p0, 2.p1, 3.p2, 0.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't3', 't3', 't3', 't4']
+Marking: [0.p0, 3.p1, 0.p2, 2.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't3', 't3', 't4', 't4']
+Marking: [0.p0, 3.p1, 1.p2, 1.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't3', 't4', 't4', 't4']
+Marking: [0.p0, 3.p1, 2.p2, 0.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't3', 't3']
+Marking: [1.p0, 0.p1, 1.p2, 3.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't3', 't4']
+Marking: [1.p0, 0.p1, 2.p2, 2.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't4', 't4']
+Marking: [1.p0, 0.p1, 3.p2, 1.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't3', 't3', 't3']
+Marking: [1.p0, 1.p1, 0.p2, 3.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't3', 't3', 't4']
+Marking: [1.p0, 1.p1, 1.p2, 2.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't3', 't4', 't4']
+Marking: [1.p0, 1.p1, 2.p2, 1.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't4', 't4', 't4']
+Marking: [1.p0, 1.p1, 3.p2, 0.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't3', 't3', 't3', 't4']
+Marking: [1.p0, 2.p1, 0.p2, 2.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't3', 't3', 't4', 't4']
+Marking: [1.p0, 2.p1, 1.p2, 1.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't3', 't4', 't4', 't4']
+Marking: [1.p0, 2.p1, 2.p2, 0.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't3', 't3', 't3', 't4', 't4']
+Marking: [1.p0, 3.p1, 0.p2, 1.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't3', 't3', 't4', 't4', 't4']
+Marking: [1.p0, 3.p1, 1.p2, 0.p3, 7.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't3', 't3', 't3']
+Marking: [2.p0, 0.p1, 0.p2, 3.p3, 7.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't3', 't3', 't4']
+Marking: [2.p0, 0.p1, 1.p2, 2.p3, 7.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't3', 't4', 't4']
+Marking: [2.p0, 0.p1, 2.p2, 1.p3, 7.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't4', 't4', 't4']
+Marking: [2.p0, 0.p1, 3.p2, 0.p3, 7.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't3', 't3', 't3', 't4']
+Marking: [2.p0, 1.p1, 0.p2, 2.p3, 7.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't3', 't3', 't4', 't4']
+Marking: [2.p0, 1.p1, 1.p2, 1.p3, 7.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't3', 't4', 't4', 't4']
+Marking: [2.p0, 1.p1, 2.p2, 0.p3, 7.p4]
+
+Firing sequence: ['t1', 't2', 't3', 't3', 't3', 't4', 't4']
+Marking: [2.p0, 2.p1, 0.p2, 1.p3, 7.p4]
+
+Firing sequence: ['t1', 't2', 't3', 't3', 't4', 't4', 't4']
+Marking: [2.p0, 2.p1, 1.p2, 0.p3, 7.p4]
+
+Firing sequence: ['t1', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [2.p0, 3.p1, 0.p2, 0.p3, 7.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't3', 't3', 't3', 't4']
+Marking: [3.p0, 0.p1, 0.p2, 2.p3, 7.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't3', 't3', 't4', 't4']
+Marking: [3.p0, 0.p1, 1.p2, 1.p3, 7.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't3', 't4', 't4', 't4']
+Marking: [3.p0, 0.p1, 2.p2, 0.p3, 7.p4]
+
+Firing sequence: ['t2', 't2', 't3', 't3', 't3', 't4', 't4']
+Marking: [3.p0, 1.p1, 0.p2, 1.p3, 7.p4]
+
+Firing sequence: ['t2', 't2', 't3', 't3', 't4', 't4', 't4']
+Marking: [3.p0, 1.p1, 1.p2, 0.p3, 7.p4]
+
+Firing sequence: ['t2', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [3.p0, 2.p1, 0.p2, 0.p3, 7.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't3', 't3']
+Marking: [0.p0, 0.p1, 1.p2, 3.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't3', 't4']
+Marking: [0.p0, 0.p1, 2.p2, 2.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't4', 't4']
+Marking: [0.p0, 0.p1, 3.p2, 1.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't3', 't3', 't3']
+Marking: [0.p0, 1.p1, 0.p2, 3.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't3', 't3', 't4']
+Marking: [0.p0, 1.p1, 1.p2, 2.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't3', 't4', 't4']
+Marking: [0.p0, 1.p1, 2.p2, 1.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't4', 't4', 't4']
+Marking: [0.p0, 1.p1, 3.p2, 0.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't3', 't3', 't3', 't4']
+Marking: [0.p0, 2.p1, 0.p2, 2.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't3', 't3', 't4', 't4']
+Marking: [0.p0, 2.p1, 1.p2, 1.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't3', 't4', 't4', 't4']
+Marking: [0.p0, 2.p1, 2.p2, 0.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't3', 't3', 't3', 't4', 't4']
+Marking: [0.p0, 3.p1, 0.p2, 1.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't3', 't3', 't4', 't4', 't4']
+Marking: [0.p0, 3.p1, 1.p2, 0.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't3', 't3', 't3']
+Marking: [1.p0, 0.p1, 0.p2, 3.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't3', 't3', 't4']
+Marking: [1.p0, 0.p1, 1.p2, 2.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't3', 't4', 't4']
+Marking: [1.p0, 0.p1, 2.p2, 1.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't4', 't4', 't4']
+Marking: [1.p0, 0.p1, 3.p2, 0.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't3', 't3', 't3', 't4']
+Marking: [1.p0, 1.p1, 0.p2, 2.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't3', 't3', 't4', 't4']
+Marking: [1.p0, 1.p1, 1.p2, 1.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't3', 't4', 't4', 't4']
+Marking: [1.p0, 1.p1, 2.p2, 0.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't3', 't3', 't3', 't4', 't4']
+Marking: [1.p0, 2.p1, 0.p2, 1.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't3', 't3', 't4', 't4', 't4']
+Marking: [1.p0, 2.p1, 1.p2, 0.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [1.p0, 3.p1, 0.p2, 0.p3, 8.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't3', 't3', 't3', 't4']
+Marking: [2.p0, 0.p1, 0.p2, 2.p3, 8.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't3', 't3', 't4', 't4']
+Marking: [2.p0, 0.p1, 1.p2, 1.p3, 8.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't3', 't4', 't4', 't4']
+Marking: [2.p0, 0.p1, 2.p2, 0.p3, 8.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't3', 't3', 't3', 't4', 't4']
+Marking: [2.p0, 1.p1, 0.p2, 1.p3, 8.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't3', 't3', 't4', 't4', 't4']
+Marking: [2.p0, 1.p1, 1.p2, 0.p3, 8.p4]
+
+Firing sequence: ['t1', 't2', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [2.p0, 2.p1, 0.p2, 0.p3, 8.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't3', 't3', 't3', 't4', 't4']
+Marking: [3.p0, 0.p1, 0.p2, 1.p3, 8.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't3', 't3', 't4', 't4', 't4']
+Marking: [3.p0, 0.p1, 1.p2, 0.p3, 8.p4]
+
+Firing sequence: ['t2', 't2', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [3.p0, 1.p1, 0.p2, 0.p3, 8.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't3', 't3', 't3']
+Marking: [0.p0, 0.p1, 0.p2, 3.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't3', 't3', 't4']
+Marking: [0.p0, 0.p1, 1.p2, 2.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't3', 't4', 't4']
+Marking: [0.p0, 0.p1, 2.p2, 1.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't4', 't4', 't4']
+Marking: [0.p0, 0.p1, 3.p2, 0.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't3', 't3', 't3', 't4']
+Marking: [0.p0, 1.p1, 0.p2, 2.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't3', 't3', 't4', 't4']
+Marking: [0.p0, 1.p1, 1.p2, 1.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't3', 't4', 't4', 't4']
+Marking: [0.p0, 1.p1, 2.p2, 0.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't3', 't3', 't3', 't4', 't4']
+Marking: [0.p0, 2.p1, 0.p2, 1.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't3', 't3', 't4', 't4', 't4']
+Marking: [0.p0, 2.p1, 1.p2, 0.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [0.p0, 3.p1, 0.p2, 0.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't3', 't3', 't3', 't4']
+Marking: [1.p0, 0.p1, 0.p2, 2.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't3', 't3', 't4', 't4']
+Marking: [1.p0, 0.p1, 1.p2, 1.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't3', 't4', 't4', 't4']
+Marking: [1.p0, 0.p1, 2.p2, 0.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't3', 't3', 't3', 't4', 't4']
+Marking: [1.p0, 1.p1, 0.p2, 1.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't3', 't3', 't4', 't4', 't4']
+Marking: [1.p0, 1.p1, 1.p2, 0.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [1.p0, 2.p1, 0.p2, 0.p3, 9.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't3', 't3', 't3', 't4', 't4']
+Marking: [2.p0, 0.p1, 0.p2, 1.p3, 9.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't3', 't3', 't4', 't4', 't4']
+Marking: [2.p0, 0.p1, 1.p2, 0.p3, 9.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [2.p0, 1.p1, 0.p2, 0.p3, 9.p4]
+
+Firing sequence: ['t2', 't2', 't2', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [3.p0, 0.p1, 0.p2, 0.p3, 9.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't3', 't3', 't3', 't4']
+Marking: [0.p0, 0.p1, 0.p2, 2.p3, 10.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't3', 't3', 't4', 't4']
+Marking: [0.p0, 0.p1, 1.p2, 1.p3, 10.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't3', 't4', 't4', 't4']
+Marking: [0.p0, 0.p1, 2.p2, 0.p3, 10.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't3', 't3', 't3', 't4', 't4']
+Marking: [0.p0, 1.p1, 0.p2, 1.p3, 10.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't3', 't3', 't4', 't4', 't4']
+Marking: [0.p0, 1.p1, 1.p2, 0.p3, 10.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [0.p0, 2.p1, 0.p2, 0.p3, 10.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't3', 't3', 't3', 't4', 't4']
+Marking: [1.p0, 0.p1, 0.p2, 1.p3, 10.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't3', 't3', 't4', 't4', 't4']
+Marking: [1.p0, 0.p1, 1.p2, 0.p3, 10.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [1.p0, 1.p1, 0.p2, 0.p3, 10.p4]
+
+Firing sequence: ['t1', 't2', 't2', 't2', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [2.p0, 0.p1, 0.p2, 0.p3, 10.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't3', 't3', 't3', 't4', 't4']
+Marking: [0.p0, 0.p1, 0.p2, 1.p3, 11.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't3', 't3', 't4', 't4', 't4']
+Marking: [0.p0, 0.p1, 1.p2, 0.p3, 11.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [0.p0, 1.p1, 0.p2, 0.p3, 11.p4]
+
+Firing sequence: ['t1', 't1', 't2', 't2', 't2', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [1.p0, 0.p1, 0.p2, 0.p3, 11.p4]
+
+Firing sequence: ['t1', 't1', 't1', 't2', 't2', 't2', 't3', 't3', 't3', 't4', 't4', 't4']
+Marking: [0.p0, 0.p1, 0.p2, 0.p3, 12.p4]
 

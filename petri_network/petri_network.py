@@ -232,6 +232,7 @@ class PetriNetwork:
             S.append(S_unit)
         print('Open file \'{}\' to see the result'.format(filename))
         f.write('\tTRANSION SYSTEM\n')
+        f.write('There are {} states, {} transitions\n'.format(len(S),len(rout)))
         f.write(templ_str.substitute(fs='\n\t'.join(S), m=A, n='\n\t'.join(rout)))
 
 if __name__ == '__main__':

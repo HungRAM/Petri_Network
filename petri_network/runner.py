@@ -18,15 +18,16 @@ MAIN MENU
 [2] Fire by transition
 [3] Auto fire
 [4] Convert to transition system
-[5] Exit/Quit'''
+[5] Show reachable marking
+[6] Exit/Quit'''
 
         os.system('cls' if os.name == 'nt' else 'clear')
         while True:
             print('Current marking: {}'.format(net.marking))
             print_net(net, net_templ)
             print(menu)
-            ip = input('Enter your choice [1,5]: ').strip()
-            while not ip.isdecimal() or not (0<=int(ip)<=5):
+            ip = input('Enter your choice [1,6]: ').strip()
+            while not ip.isdecimal() or not (0<=int(ip)<=6):
                 ip = input('Wrong menu selection, please try again... ')
 
             if ip=='1':
@@ -110,7 +111,11 @@ MAIN MENU
                 net.convert_to_TS()
                 input("Enter to continue!")
 
-            elif ip == '5':
+            elif ip=='5':
+                net.reachable_marking()
+                input("Enter to continue!")
+
+            elif ip == '6':
                 print('Goodbye<3')
                 break
             os.system('cls' if os.name == 'nt' else 'clear')
